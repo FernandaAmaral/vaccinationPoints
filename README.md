@@ -21,26 +21,32 @@ O limite de doses a ser disponibilizado para cada RA é determinado pela quantid
 
 1. O limite de doses distribuídas é determinado pela quantidade disponível no DF
 
-<img src="https://latex.codecogs.com/gif.latex?\sum_{i=0}^{N} X_{i} \leq doses " />
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\sum_{i=0}^{N}&space;X_{i}&space;\leq&space;doses" title="\bg_white \sum_{i=0}^{N} X_{i} \leq doses" />
 
 2. Toda região administrativa deve estar até uma distância máxima (em Km) de um posto drive thru.
 
 Dada uma matriz booleana *dist_ij* que indica se uma RA *i* é vizinha da outra *j* ou não, temos que:
 
-<img src="https://latex.codecogs.com/gif.latex?\sum_{N}^{j = 0} X_{j} dist_{ij} \geq min\_doses, \forall i\epsilon N " />
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\sum_{N}^{j&space;=&space;0}&space;X_{j}&space;\&space;dist_{ij}&space;\geq&space;min\_doses,&space;\forall&space;i\epsilon&space;N" title="\bg_white \sum_{N}^{j = 0} X_{j} \ dist_{ij} \geq min\_doses, \forall i\epsilon N" />
+
 
 ### Modelagem Final
 
 Temos então a variável alvo, quantidade de doses de vacina alocadas para cada região:
-<img src="https://latex.codecogs.com/gif.latex?X_i, i\epsilon N, 0 \leq  X_i \leq min(cap\_max, qtde\_vacinantes) " />
+<br/><br/>
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;X_i&space;,&space;\&space;i\epsilon&space;N" title="\bg_white X_i , \ i\epsilon N" />
+
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;0&space;\leq&space;X_i&space;\leq&space;min(cap_max,&space;qtde_vacinantes)" title="\bg_white 0 \leq X_i \leq min(cap_max, qtde_vacinantes)" />
 
 Com o objetivo de maximizar a quantidade de doses distribuídas:
-<img src="https://latex.codecogs.com/gif.latex?max(\sum_{i=0}^{N}Xi) " />
+<br/><br/>
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;max(\sum_{i=0}^{N}Xi)" title="\bg_white max(\sum_{i=0}^{N}Xi)" />
 
 Sujeito a:
 
-<img src="https://latex.codecogs.com/gif.latex?\sum_{i=0}^{N} X_{i} \leq doses" />
-<img src="https://latex.codecogs.com/gif.latex?\sum_{N}^{j = 0} X_{j} dist_{ij} \geq min\_doses, \forall i\epsilon N " />
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\sum_{i=0}^{N}&space;X_{i}&space;\leq&space;doses" title="\bg_white \sum_{i=0}^{N} X_{i} \leq doses" />
+<br/><br/>
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\sum_{N}^{j&space;=&space;0}&space;X_{j}&space;\&space;dist_{ij}&space;\geq&space;min\_doses,&space;\forall&space;i\epsilon&space;N" title="\bg_white \sum_{N}^{j = 0} X_{j} \ dist_{ij} \geq min\_doses, \forall i\epsilon N" />
 
 
 ## Implementação
