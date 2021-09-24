@@ -15,7 +15,7 @@ Dado um conjunto de regiões administrativas (*N*), determinar a quantidade de d
 
 Cada posto drive thru tem uma capacidade máxima de vacinação (*cap_max*) e uma capacidade mínima para justificar a existência do posto naquela RA (*cap_min*).
 
-O limite de doses a ser disponibilizado para cada RA é determinado pela quantidade de pessoas aptas a se vacinar na RA ( *qtde_vacinantes = Vi * qtd_pessoas_por_carro*), considerando a média de pessoas vacinantes por carro. Isso implica que pode não haver posto de vacinação por drive-thru para RAs com poucos carros (nestes locais, a alternativa seria somente os postos de vacinação para pedestres).
+O limite de doses a ser disponibilizado para cada RA é determinado pela quantidade de pessoas aptas a se vacinar na RA (*qtde_vacinantes = Vi * qtd_pessoas_por_carro*), considerando a quantidade de veículos por RA (*Vi*) e a média de pessoas vacinantes por carro (*qtd_pessoas_por_carro*). Isso implica que pode não haver posto de vacinação por drive-thru para RAs com poucos carros (nestes locais, a alternativa seria somente os postos de vacinação para pedestres).
 
 ### Restrições
 
@@ -36,7 +36,7 @@ Temos então a variável alvo, quantidade de doses de vacina alocadas para cada 
 <br/><br/>
 <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;X_i&space;,&space;\&space;i\epsilon&space;N" title="\bg_white X_i , \ i\epsilon N" />
 
-<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;0&space;\leq&space;X_i&space;\leq&space;min(cap_max,&space;qtde_vacinantes)" title="\bg_white 0 \leq X_i \leq min(cap_max, qtde_vacinantes)" />
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;0&space;\leq&space;X_i&space;\leq&space;min(cap\_max,&space;qtde\_vacinantes)" title="\bg_white 0 \leq X_i \leq min(cap\_max, qtde\_vacinantes)" />
 
 Com o objetivo de maximizar a quantidade de doses distribuídas:
 <br/><br/>
@@ -72,7 +72,7 @@ Além disso, os seguintes dados foram extraídos:
 - Geocoordenadas (latitude e longitude) de cada RA: Google Maps
 - Distância entre as RAs: Estimativa feita por meio da biblioteca geopy
 
-Infelizmente, a restrição de distância torna o problema em um sistema sem solução. Removendo a restrição, foram obtidas as seguintes quantidades de vacina por RA:
+Ao final foram obtidas as seguintes quantidades de vacina por RA:
 
 ```
 Plano Piloto: 18000.0 vacinas
