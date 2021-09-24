@@ -49,7 +49,7 @@ $$\sum_{N}^{j = 0} X_{j} dist_{ij} \geq min\_doses, \forall i\epsilon N$$
 
 ## Implementação
 
-Uma implementação da modelagem proposta foi feita e disponibilizada no seguinte [repositório]() do github. O projeto possui os seguintes arquivos:
+Uma implementação da modelagem proposta foi feita e disponibilizada no seguinte [repositório](https://github.com/FernandaAmaral/vaccinationPoints) do github. O projeto possui os seguintes arquivos:
 
 - **solver.ipynb**: Jupyter notebook com a solução
 - **calc_dist.py**: Script python que calcula a distância entre as RAs utilizando a biblioteca geopy
