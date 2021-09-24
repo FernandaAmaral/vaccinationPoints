@@ -11,40 +11,36 @@ Foi feita uma adaptação da modelagem original do artigo para transformá-la em
 
 ### Variável alvo
 
-Dado um conjunto de regiões administrativas (*N*), determinar a quantidade de doses de vacina alocadas para cada região ($X_i, i\epsilon N$) dentre o total de doses disponíveis no DF (*n_doses*).
+Dado um conjunto de regiões administrativas (*N*), determinar a quantidade de doses de vacina alocadas para cada região (*Xi*) dentre o total de doses disponíveis no DF (*n_doses*).
 
 Cada posto drive thru tem uma capacidade máxima de vacinação (*cap_max*) e uma capacidade mínima para justificar a existência do posto naquela RA (*cap_min*).
 
-O limite de doses a ser disponibilizado para cada RA é determinado pela quantidade de pessoas aptas a se vacinar na RA ( $qtde\_vacinantes = V_i * qtde\_pessoas\_por\_carro$ ), considerando a média de pessoas vacinantes por carro. Isso implica que pode não haver posto de vacinação por drive-thru para RAs com poucos carros (nestes locais, a alternativa seria somente os postos de vacinação para pedestres).
+O limite de doses a ser disponibilizado para cada RA é determinado pela quantidade de pessoas aptas a se vacinar na RA ( *qtde_vacinantes = Vi * qtd_pessoas_por_carro*), considerando a média de pessoas vacinantes por carro. Isso implica que pode não haver posto de vacinação por drive-thru para RAs com poucos carros (nestes locais, a alternativa seria somente os postos de vacinação para pedestres).
 
 ### Restrições
 
 1. O limite de doses distribuídas é determinado pela quantidade disponível no DF
 
-
-$$ \sum_{i=0}^{N} X_{i} \leq doses$$
+<img src="https://latex.codecogs.com/gif.latex?\sum_{i=0}^{N} X_{i} \leq doses " />
 
 2. Toda região administrativa deve estar até uma distância máxima (em Km) de um posto drive thru.
 
-Dada uma matriz booleana $dist_{ij}$ que indica se uma RA *i* é vizinha da outra *j* ou não, temos que:
+Dada uma matriz booleana *dist_ij* que indica se uma RA *i* é vizinha da outra *j* ou não, temos que:
 
-
-$$\sum_{N}^{j = 0} X_{j} dist_{ij} \geq min\_doses, \forall i\epsilon N$$
-
+<img src="https://latex.codecogs.com/gif.latex?\sum_{N}^{j = 0} X_{j} dist_{ij} \geq min\_doses, \forall i\epsilon N " />
 
 ### Modelagem Final
 
 Temos então a variável alvo, quantidade de doses de vacina alocadas para cada região:
-$$X_i, i\epsilon N$$
-com  $ 0 \leq  X_i \leq min(cap\_max, qtde\_vacinantes)$
+<img src="https://latex.codecogs.com/gif.latex?X_i, i\epsilon N, 0 \leq  X_i \leq min(cap\_max, qtde\_vacinantes) " />
 
 Com o objetivo de maximizar a quantidade de doses distribuídas:
-$$max(\sum_{i=0}^{N}Xi)$$
+<img src="https://latex.codecogs.com/gif.latex?max(\sum_{i=0}^{N}Xi) " />
 
 Sujeito a:
 
-$$ \sum_{i=0}^{N} X_{i} \leq doses$$
-$$\sum_{N}^{j = 0} X_{j} dist_{ij} \geq min\_doses, \forall i\epsilon N$$
+<img src="https://latex.codecogs.com/gif.latex?\sum_{i=0}^{N} X_{i} \leq doses" />
+<img src="https://latex.codecogs.com/gif.latex?\sum_{N}^{j = 0} X_{j} dist_{ij} \geq min\_doses, \forall i\epsilon N " />
 
 
 ## Implementação
